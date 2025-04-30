@@ -3,6 +3,7 @@ import Navigation from './components/Navigation.astro';
 import Footer from './components/Footer.astro';
 import BaseLayout from './layouts/BaseLayout.astro'
 import BlogPost from './components/BlogPost.astro';
+import './styles/global.css';
 
 const allPosts = Object.values(import.meta.glob('./blog/*.md', { eager: true }));
 const pageTitle = "My Astro Learning Blog";
