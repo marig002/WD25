@@ -1,4 +1,7 @@
 ---
+import Navigation from './components/Navigation.astro';
+import Footer from './components/Footer.astro';
+
 const pageTitle = ' About Marisa'
 
 const identity = {
@@ -20,10 +23,7 @@ const skills = ['Linux Administration', 'C++', 'Python']
 		<title> {pageTitle} </title>
 	</head>
 	<body>
-		<a href="/">Home</a>
-		<a href="/about/">About</a>
-		<a href="/blog/">Blog</a>
-
+		<Navigation />
   		<h1>About Me</h1>
   		<h2>... and my new Astro site!</h2>
 
@@ -34,12 +34,14 @@ const skills = ['Linux Administration', 'C++', 'Python']
 		<p> Here are a few facts about me:</p>
 		<ul>
 			<li> My name is {identity.firstName} </li>
-			<li> I live in {identity.state}, but am originally from {homestate} </li> 
+			<li> I live in {identity.state}, but am originally from {identity.homestate} </li> 
 			<li> Two of my hobbies are {identity.hobbies[0]} and {identity.hobbies[1]}. </li> 
 		</ul>
 		<p> My skills are: </p>
 		<ul>
 			{skills.map((skill) => <li>{skill}</li>)}
 		</ul>
+
+		<Footer />
 	</body>
 </html>
